@@ -1,0 +1,1 @@
+const url =' http://restapi.adequateshop.com';
