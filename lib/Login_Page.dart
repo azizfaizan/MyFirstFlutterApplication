@@ -34,7 +34,7 @@ class LoginPageState extends State<LoginPage> {
                 height: 10,
               ),
               Text(
-                "Welcome back,you\'ve been missing",
+                "Welcome back,you\'ve been missing since long time",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               SizedBox(height: 50),
