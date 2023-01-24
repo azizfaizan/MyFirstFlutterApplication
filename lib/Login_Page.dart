@@ -51,7 +51,8 @@ class LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.only(left: 18.0),
                     child: TextField(
                       decoration: InputDecoration(
-                          border: InputBorder.none, hintText: 'Email'),
+                          border: InputBorder.none,
+                          hintText: 'Enter your e-mail'),
                     ),
                   ),
                 ),
@@ -71,7 +72,8 @@ class LoginPageState extends State<LoginPage> {
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
-                          border: InputBorder.none, hintText: 'Password'),
+                          border: InputBorder.none,
+                          hintText: 'Enter your password'),
                     ),
                   ),
                 ),
