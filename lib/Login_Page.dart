@@ -61,6 +61,7 @@ class LoginPageState extends State<LoginPage> {
                         onChanged: (newText) { enteredEmail = newText; },
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Enter Email'),
+
                     ),
                   ),
                 ),
@@ -82,6 +83,7 @@ class LoginPageState extends State<LoginPage> {
                       obscureText: true,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Enter Password'),
+
                     ),
                   ),
                 ),
