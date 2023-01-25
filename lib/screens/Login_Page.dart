@@ -1,7 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:my_first_flutter_app/server/Api_Service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -11,10 +9,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginPageState extends State<LoginPage> {
-
-  String enteredEmail="";
-  String enteredPassword="";
-
+  String enteredEmail = "";
+  String enteredPassword = "";
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +54,11 @@ class LoginPageState extends State<LoginPage> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 18.0),
                     child: TextField(
-                        onChanged: (newText) { enteredEmail = newText; },
+                      onChanged: (newText) {
+                        enteredEmail = newText;
+                      },
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Enter Email'),
-
                     ),
                   ),
                 ),
@@ -79,11 +76,12 @@ class LoginPageState extends State<LoginPage> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 18.0),
                     child: TextField(
-                      onChanged: (newText) { enteredPassword = newText; },
+                      onChanged: (newText) {
+                        enteredPassword = newText;
+                      },
                       obscureText: true,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Enter Password'),
-
                     ),
                   ),
                 ),
@@ -117,8 +115,9 @@ class LoginPageState extends State<LoginPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      login(enteredPassword,enteredEmail);
-                      print('register taped $enteredEmail and $enteredPassword');
+                      login(enteredPassword, enteredEmail);
+                      print(
+                          'register taped $enteredEmail and $enteredPassword');
                     },
                     child: Text(
                       " register now",
@@ -136,11 +135,5 @@ class LoginPageState extends State<LoginPage> {
 }
 
 void login(String enteredPassword, String enteredEmail) async {
-  const url = 'http://restapi.adequateshop.com/api/authaccount/login';
-  final uri = Uri.parse(url);
-  final response = await http.post(uri, body: {"email": enteredEmail, "password": enteredPassword});
-  final responseCode = response.statusCode;
-  print('email  $enteredEmail');
-  print(responseCode.toString());
-  print(jsonDecode(response.body));
+  ApiService().login(enteredPassword, enteredEmail);
 }
